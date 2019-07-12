@@ -1,0 +1,48 @@
+{
+  "name": "poker-odds-calc",
+  "version": "0.0.1",
+  "description": "Poker odds calculator for Texas hold'em (with short-deck support) and Omaha",
+  "license": "MIT",
+  "dependencies": {
+    "argv": "0.0.2",
+    "lodash": "^4.17.14"
+  },
+  "devDependencies": {
+    "@types/es6-shim": "^0.31.39",
+    "@types/lodash": "^4.14.136",
+    "@types/mocha": "^5.2.5",
+    "@types/node": "^10.12.18",
+    "mocha": "^6.1.4",
+    "tslint": "^5.18.0",
+    "typescript": "^2.9.2"
+  },
+  "bin": {
+    "poker-odds-calc": "./dist/Lib/bin/poker-odds-calc.js"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "main": "./dist/index.js",
+  "typings": "./dts/index.d.ts",
+  "scripts": {
+    "build": "rm -rf dist/* && rm -rf dts/* && tsc",
+    "test": "mocha ./dist/test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/siavashg87/node-poker-odds-calc.git"
+  },
+  "keywords": [
+    "poker",
+    "odds",
+    "odds calculator",
+    "texas hold'em",
+    "texas holdem",
+    "shortdeck texas holdem",
+    "6+ texas hold'm",
+    "omaha",
+    "omaha hi",
+    "hand equity",
+    "equity"
+  ]
+}
