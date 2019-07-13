@@ -37,6 +37,12 @@ argv.option([
     description: "Limit number of iterations. Default 100,000."
   },
   {
+    name: "dead",
+    short: "d",
+    type: "string",
+    description: "Dead card(s) to exclude from calculation. Example 2s2d"
+  },
+  {
     name: "tripsbeatstraight",
     type: "boolean",
     description: "Option only available for -g shortdeck_holdem"
@@ -103,6 +109,9 @@ try {
 
   if (options.exhaustive === true)
     table.exhaustive();
+
+  if (options.hasOwnProperty("dead"))
+    table.setDeadCards(CardsFromString(options.dead));
 
   PrintResult(table.calculate());
 

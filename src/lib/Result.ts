@@ -125,6 +125,10 @@ export default class Result {
     return this.result.board.getCards().map(card => card.toString()).join("")
   }
 
+  getDeadCards() {
+    return this.result.board.getDeadCards().map(card => card.toString()).join("")
+  }
+
   toJson() {
     return this.result;
   }

@@ -104,5 +104,10 @@ export default class Table {
     return this;
   }
 
+  setDeadCards(cards: Array<string>) {
+    this.board.dead(cards);
+    return this;
+  }
+
 }
 

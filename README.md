@@ -23,6 +23,7 @@ poker-odds-calc -p AdKh -p AcKh -b 5sTd9c
 -p, --player AcKh           # Define any number of player hand.
 -l, --limit 1000            # Limit number of iterations. Default 100,000.
 -e, --exhaustive            # Run all possible board combinations, regardless limit option.
+-d, --dead 2s2d             # Dead card(s) to exclude from calculation.
 --tripsbeatstraight         # Option only available for -g shortdeck_holdem
 -h, --help                  # Show help
 ```

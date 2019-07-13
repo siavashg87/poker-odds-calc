@@ -288,7 +288,7 @@ describe("Texas Hold'em", function () {
       .boardAction((board: Board) => {
         board
           .setFlop(["Ts", "6h", "5h"])
-          .burn(["Js", "Qs"])
+          .dead(["Js", "Qs"])
       })
       .calculate();
     assert.equal(result.getPlayers()[0].getWinsPercentage(), 3.10);

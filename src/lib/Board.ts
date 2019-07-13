@@ -8,7 +8,7 @@ import {type as HandValueTypes} from "./HandValue/index";
 export default class Board {
 
   private cards: Array<Card> = [];
-  private burned_cards: Array<Card> = [];
+  private dead_cards: Array<Card> = [];
 
   constructor(private table: Table) {
   }
@@ -34,13 +34,17 @@ export default class Board {
     return this;
   }
 
-  burn(cards: string | Array<string>) {
+  dead(cards: string | Array<string>) {
     if (!Array.isArray(cards))
       cards = [cards];
     (cards as Array<string>).forEach(card => {
-      this.burned_cards.push(this.table.getDeck().getCards().find(c => card === c.toString()).setOwner(this))
+      this.dead_cards.push(this.table.getDeck().getCards().find(c => card === c.toString()).setOwner(this))
     });
     return this;
+  }
+
+  getDeadCards() {
+    return this.dead_cards;
   }
 
   setTurn(card: string) {
