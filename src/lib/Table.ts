@@ -1,8 +1,7 @@
-import Player from "./player";
+import Player from "./Player";
 import Deck from "./Deck";
 import Game from "./Game";
 import Board from "./Board";
-import {clone, cloneDeep, sample} from "lodash";
 import {Games as iGames} from "./Interfaces";
 
 export default class Table {
@@ -15,7 +14,7 @@ export default class Table {
   private _limit = 100000;
 
   constructor(game: iGames = "texas_holdem", protected seats: number = 9) {
-    this.players = (new Array(seats) as any).fill(null).map((p, i) => new Player(i + 1, this));
+    this.players = (new Array(seats) as any).fill(null).map((p: any, i: number) => new Player(i + 1, this));
     this.game = new Game(game, this);
     this.deck = new Deck(this.game);
     this.board = new Board(this);
@@ -96,7 +95,7 @@ export default class Table {
     return this.board.getResult();
   }
 
-  setBoard(cards) {
+  setBoard(cards: Array<string>) {
     this.board.setFlop(cards.slice(0, 3));
     if (cards.length > 3)
       this.board.setTurn(cards[3]);

@@ -11,7 +11,7 @@ interface iPlayerResult {
 }
 
 class ResultPlayer {
-  constructor(private readonly data: iPlayerResult, private table) {
+  constructor(private readonly data: iPlayerResult, private table: Result) {
   }
 
   isWinner() {
@@ -47,7 +47,7 @@ class ResultPlayer {
   }
 
   getRanks() {
-    let ranks = {};
+    let ranks: {[key: string]: ResultRank} = {};
     for (let rank in this.data.ranks) {
       ranks[rank] = new ResultRank(rank, this);
     }
@@ -72,7 +72,7 @@ class ResultPlayer {
 }
 
 class ResultRank {
-  constructor(private readonly rank, private player: ResultPlayer) {
+  constructor(private readonly rank: string, private player: ResultPlayer) {
   }
 
   getCount() {
@@ -86,7 +86,7 @@ class ResultRank {
     return perc;
   }
 
-  getName() {
+  getName(): string {
     return HanvValueName[this.rank];
   }
 }

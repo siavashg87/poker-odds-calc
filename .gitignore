@@ -1,8 +1,5 @@
 node_modules
 npm-debug.log
 .idea/
-.nyc_output
 dist
 dts
-coverage
-.vscode/

@@ -7,7 +7,7 @@ export default function StraightFlush(game: Game, cards: Array<Card>, suits: { [
     if (_cards.length < 5)
       continue;
     _cards.sortCards();
-    let matches = [];
+    let matches: Array<Card> = [];
 
     for (let i = 0, j = _cards.length; i < j; i++) {
       if (i === 0)

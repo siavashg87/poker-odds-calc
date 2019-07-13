@@ -1,4 +1,5 @@
 import {TexasHoldem as Table} from "../index";
+import Board from "../lib/Board";
 import * as assert from "assert";
 
 describe("Texas Hold'em", function () {
@@ -6,7 +7,7 @@ describe("Texas Hold'em", function () {
     const result = new Table()
       .addPlayer(["Qs", "Ks"])
       .addPlayer(["Qd", "Kd"])
-      .boardAction(board => {
+      .boardAction((board: Board) => {
         board
           .setFlop(["Js", "Ts", "5h"])
           .setTurn("Td")
@@ -29,7 +30,7 @@ describe("Texas Hold'em", function () {
     const result = new Table()
       .addPlayer(["As", "Ad"])
       .addPlayer(["Ks", "Kd"])
-      .boardAction(board => {
+      .boardAction((board: Board) => {
         board
           .setFlop(["Ah", "Kh", "5h"])
           .setTurn("Td")
@@ -52,7 +53,7 @@ describe("Texas Hold'em", function () {
     const result = new Table()
       .addPlayer(["As", "Ad"])
       .addPlayer(["Ks", "Kd"])
-      .boardAction(board => {
+      .boardAction((board: Board) => {
         board
           .setFlop(["2d", "2h", "2c"])
           .setTurn("2s")
@@ -75,7 +76,7 @@ describe("Texas Hold'em", function () {
     const result = new Table()
       .addPlayer(["8d", "8c"])
       .addPlayer(["2d", "2c"])
-      .boardAction(board => {
+      .boardAction((board: Board) => {
         board
           .setFlop(["8h", "Ks", "Ad"])
         //.setTurn("2h")
@@ -98,7 +99,7 @@ describe("Texas Hold'em", function () {
     const result = new Table()
       .addPlayer(["9d", "Td"])
       .addPlayer(["2c", "3c"])
-      .boardAction(board => {
+      .boardAction((board: Board) => {
         board
           .setFlop(["8d", "2d", "Kd"])
         //.setTurn("8d")
@@ -122,7 +123,7 @@ describe("Texas Hold'em", function () {
     const result = new Table()
       .addPlayer(["9d", "Td"])
       .addPlayer(["7d", "8d"])
-      .boardAction(board => {
+      .boardAction((board: Board) => {
         board
           .setFlop(["5d", "2d", "Ad"])
       })
@@ -144,7 +145,7 @@ describe("Texas Hold'em", function () {
     const result = new Table()
       .addPlayer(["9d", "Tc"])
       .addPlayer(["2d", "2c"])
-      .boardAction(board => {
+      .boardAction((board: Board) => {
         board
           .setFlop(["8h", "Js", "Ad"])
         //.setTurn("8d")
@@ -168,7 +169,7 @@ describe("Texas Hold'em", function () {
     const result = new Table()
       .addPlayer(["Kd", "Kc"])
       .addPlayer(["2d", "2c"])
-      .boardAction(board => {
+      .boardAction((board: Board) => {
         board
           .setFlop(["2h", "Ks", "Ad"])
         //.setTurn("8d")
@@ -192,7 +193,7 @@ describe("Texas Hold'em", function () {
     const result = new Table()
       .addPlayer(["Ad", "2c"])
       .addPlayer(["Kd", "Qc"])
-      .boardAction(board => {
+      .boardAction((board: Board) => {
         board
           .setFlop(["Ah", "2s", "Ks"])
           .setTurn("Qh")
@@ -215,7 +216,7 @@ describe("Texas Hold'em", function () {
     const result = new Table()
       .addPlayer(["Ad", "2c"])
       .addPlayer(["Qd", "Kc"])
-      .boardAction(board => {
+      .boardAction((board: Board) => {
         board
           .setFlop(["2h", "Ks", "8d"])
         //.setTurn("2h")
@@ -238,7 +239,7 @@ describe("Texas Hold'em", function () {
     const result = new Table()
       .addPlayer(["Ad", "Tc"])
       .addPlayer(["5d", "Kc"])
-      .boardAction(board => {
+      .boardAction((board: Board) => {
         board
           .setFlop(["6h", "7s", "8d"])
           .setTurn("9h")
@@ -263,7 +264,7 @@ describe("Texas Hold'em", function () {
       .addPlayer(["2s", "2d"])
       .addPlayer(["Ts", "Td"])
       .addPlayer(["Ks", "Kd"])
-      .boardAction(board => {
+      .boardAction((board: Board) => {
         board
           .setFlop(["5s", "6s", "Qh"])
       })
@@ -284,7 +285,7 @@ describe("Texas Hold'em", function () {
     const result = new Table()
       .addPlayer(["As", "Ks"])
       .addPlayer(["Ad", "Kd"])
-      .boardAction(board => {
+      .boardAction((board: Board) => {
         board
           .setFlop(["Ts", "6h", "5h"])
           .burn(["Js", "Qs"])

@@ -46,13 +46,13 @@ Object.defineProperty(Array.prototype, 'sortCards', {
 Object.defineProperty(Array.prototype, 'sortPairs', {
   configurable: true,
   value: function sortPairs() {
-    return this.sort((a: Card, b: Card) => b[0].getRank() - a[0].getRank())
+    return this.sort((a: Array<Card>, b: Array<Card>) => b[0].getRank() - a[0].getRank())
   },
   writable: true
 });
 
 export function flatUnique(nested: Array<Array<Card>>): Array<Array<Card>> {
-  let _arrays = [];
+  let _arrays: Array<Array<Card>> = [];
   let arrays = nested[0].map(a => [a]);
   for (let i = 1, j = nested.length; i < j; i++) {
     const ln = nested[i].length;

@@ -3,8 +3,8 @@ import {flatUnique} from "../Utils";
 import Game from "../Game";
 
 export default function Straight(game: Game, cards: Array<Card>, suits: { [key: string]: Array<Card> }, num_groups: Array<Array<Card>>, player_cards: Array<Card>): Array<Card> {
-  let match = [];
-  let match_omaha = [];
+  let match: Array<Card> = [];
+  let match_omaha: Array<Array<Card>> = [];
   for (let i = 0, j = cards.length; i < j; i++) {
     if (i === 0) {
       match = [cards[i]];

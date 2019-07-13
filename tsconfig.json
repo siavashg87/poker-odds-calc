@@ -5,6 +5,9 @@
     "outDir": "./dist/",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
     "moduleResolution": "node",
     "declarationDir": "./dts/",
     "declaration": true,
@@ -20,7 +23,6 @@
       "node",
       "mocha"
     ]
-
   },
   "exclude": [
     "node_modules",

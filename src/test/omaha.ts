@@ -1,4 +1,5 @@
 import {Omaha as Table} from "../index";
+import Board from "../lib/Board";
 import * as assert from "assert";
 
 describe("Texas Omaha", function () {
@@ -7,7 +8,7 @@ describe("Texas Omaha", function () {
     const result = new Table()
       .addPlayer(["Th", "9h", "Jh", "6s"])
       .addPlayer(["Tc", "9c", "8c", "5c"])
-      .boardAction(board => {
+      .boardAction((board: Board) => {
         board
           .setFlop(["Qh", "5d", "8h"])
           .setTurn("3s")
@@ -27,7 +28,7 @@ describe("Texas Omaha", function () {
     const result = new Table()
       .addPlayer(["Th", "9h", "2s", "7d"])
       .addPlayer(["Tc", "9c", "8c", "7c"])
-      .boardAction(board => {
+      .boardAction((board: Board) => {
         board
           .setFlop(["Qh", "Jh", "8h"])
           .setTurn("3s")
@@ -48,7 +49,7 @@ describe("Texas Omaha", function () {
     const result = new Table()
       .addPlayer(["Th", "9h", "Jh", "6s"])
       .addPlayer(["Tc", "9c", "8c", "5c"])
-      .boardAction(board => {
+      .boardAction((board: Board) => {
         board
           .setFlop(["Qh", "5d", "8h"])
           .setTurn("7h")
@@ -68,7 +69,7 @@ describe("Texas Omaha", function () {
     const result = new Table()
       .addPlayer(["Th", "Tc", "2h", "2c"])
       .addPlayer(["3c", "4c", "5c", "6c"])
-      .boardAction(board => {
+      .boardAction((board: Board) => {
         board
           .setFlop(["Td", "Ts", "8h"])
           .setTurn("3s")
@@ -88,7 +89,7 @@ describe("Texas Omaha", function () {
     const result = new Table()
       .addPlayer(["Th", "Tc", "Ts", "4d"])
       .addPlayer(["3c", "4c", "5c", "6c"])
-      .boardAction(board => {
+      .boardAction((board: Board) => {
         board
           .setFlop(["Td", "2s", "4h"])
           .setTurn("3s")
@@ -108,7 +109,7 @@ describe("Texas Omaha", function () {
     const result = new Table()
       .addPlayer(["Kh", "4d", "2s", "2c"])
       .addPlayer(["Ac", "Ad", "5c", "6c"])
-      .boardAction(board => {
+      .boardAction((board: Board) => {
         board
           .setFlop(["Td", "2d", "2h"])
           .setTurn("Ts")
@@ -128,7 +129,7 @@ describe("Texas Omaha", function () {
     const result = new Table()
       .addPlayer(["As", "Jh", "Jd", "Jc"])
       .addPlayer(["7c", "9d", "Qc", "Qs"])
-      .boardAction(board => {
+      .boardAction((board: Board) => {
         board
           .setFlop(["Td", "Ad", "Ac"])
           .setTurn("Ts")
@@ -148,7 +149,7 @@ describe("Texas Omaha", function () {
     const result = new Table()
       .addPlayer(["As", "9s", "2d", "3c"])
       .addPlayer(["7c", "9d", "Qd", "Qs"])
-      .boardAction(board => {
+      .boardAction((board: Board) => {
         board
           .setFlop(["Ad", "5c", "5d"])
           .setTurn("Ac")
@@ -168,7 +169,7 @@ describe("Texas Omaha", function () {
     const result = new Table()
       .addPlayer(["3c", "As", "Ad", "Ac"])
       .addPlayer(["7c", "9d", "Qd", "Qs"])
-      .boardAction(board => {
+      .boardAction((board: Board) => {
         board
           .setFlop(["9s", "5c", "5d"])
           .setTurn("2d")
@@ -188,7 +189,7 @@ describe("Texas Omaha", function () {
     const result = new Table()
       .addPlayer(["3c", "5s", "Ad", "Ac"])
       .addPlayer(["7c", "9d", "Kd", "Js"])
-      .boardAction(board => {
+      .boardAction((board: Board) => {
         board
           .setFlop(["3s", "5c", "6d"])
           .setTurn("Ks")
@@ -208,7 +209,7 @@ describe("Texas Omaha", function () {
     const result = new Table()
       .addPlayer(["3c", "5s", "Ad", "Ac"])
       .addPlayer(["7c", "9d", "Kd", "Js"])
-      .boardAction(board => {
+      .boardAction((board: Board) => {
         board
           .setFlop(["3s", "4c", "6d"])
           .setTurn("Ks")
@@ -228,7 +229,7 @@ describe("Texas Omaha", function () {
     const result = new Table()
       .addPlayer(["3c", "5s", "4s", "2s"])
       .addPlayer(["7c", "9c", "Kd", "Js"])
-      .boardAction(board => {
+      .boardAction((board: Board) => {
         board
           .setFlop(["2d", "3d", "4h"])
           .setTurn("6d")
@@ -248,7 +249,7 @@ describe("Texas Omaha", function () {
     const result = new Table()
       .addPlayer(["Th", "9h", "2s", "7d"])
       .addPlayer(["Tc", "9c", "8c", "7c"])
-      .boardAction(board => {
+      .boardAction((board: Board) => {
         board
           .setFlop(["Ac", "As", "8h"])
           .setTurn("7h")
@@ -268,7 +269,7 @@ describe("Texas Omaha", function () {
     const result = new Table()
       .addPlayer(["Th", "9h", "2s", "7d"])
       .addPlayer(["Tc", "9c", "8c", "7c"])
-      .boardAction(board => {
+      .boardAction((board: Board) => {
         board
           .setFlop(["Ac", "As", "8h"])
       })
@@ -286,7 +287,7 @@ describe("Texas Omaha", function () {
     const result = new Table()
       .addPlayer(["Th", "9h", "2s", "7d"])
       .addPlayer(["Tc", "9c", "8c", "7c"])
-      .boardAction(board => {
+      .boardAction((board: Board) => {
         board
           .setFlop(["Ac", "As", "7h"])
           .setTurn("Jh")
@@ -306,7 +307,7 @@ describe("Texas Omaha", function () {
     const result = new Table()
       .addPlayer(["8d", "4s", "3d", "4c"])
       .addPlayer(["Qh", "Kh", "3h", "7c"])
-      .boardAction(board => {
+      .boardAction((board: Board) => {
         board
           .setFlop(["9c", "Js", "9d"])
       })
@@ -324,7 +325,7 @@ describe("Texas Omaha", function () {
     const result = new Table()
       .addPlayer(["7d", "8c", "6h", "5h"])
       .addPlayer(["Js", "9s", "Qd", "7c"])
-      .boardAction(board => {
+      .boardAction((board: Board) => {
         board
           .setFlop(["Jh", "Th", "9c"])
       })

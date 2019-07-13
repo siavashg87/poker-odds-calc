@@ -4,6 +4,7 @@
   "description": "Fastest and most accurate node module for calculating odds of poker games Texas Hold'em, Texas Shortdeck/Sixplus and Omaha.",
   "license": "MIT",
   "dependencies": {
+    "@types/argv": "0.0.4",
     "argv": "0.0.2",
     "lodash": "^4.17.14"
   },
@@ -13,11 +14,12 @@
     "@types/mocha": "^5.2.5",
     "@types/node": "^10.12.18",
     "mocha": "^6.1.4",
+    "ts-node": "^8.3.0",
     "tslint": "^5.18.0",
     "typescript": "^2.9.2"
   },
   "bin": {
-    "poker-odds-calc": "dist/lib/bin/poker-odds-calc.js"
+    "poker-odds-calc": "./dist/lib/bin/poker-odds-calc.js"
   },
   "engines": {
     "node": ">=6.0.0"

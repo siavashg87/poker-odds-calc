@@ -40,11 +40,11 @@ export default class Game {
     return this.trips_beats_straight;
   }
 
-  getResult(players, board) {
+  getResult(players: Array<Player>, board: Array<Card>) {
     return players.map((player: Player) => this.getHandStrentgh(board, player.getCards()));
   }
 
-  private getHandStrentgh(board, player_cards) {
+  private getHandStrentgh(board: Array<Card>, player_cards: Array<Card>) {
 
     const cards = [...board, ...player_cards].sortCards();
 
@@ -57,9 +57,9 @@ export default class Game {
       s: []
     } as { [key: string]: Array<Card> };
 
-    let num_groups = [];
+    let num_groups: Array<Array<Card>> = [];
 
-    _cards.forEach(card => {
+    _cards.forEach((card: Card) => {
       if (card.isAce() && !card.isLowAce()) {
         const AceOne = new Card(card.getSuit(), "A", this).setAsLowAce();
         cards.push(AceOne);

@@ -8,7 +8,7 @@ export default class Card {
   private rank: number = null;
   readonly str: string = null;
 
-  constructor(private suit: "c" | "s" | "h" | "d", private num, private game: Game) {
+  constructor(private suit: "c" | "s" | "h" | "d", private num: number | string, private game: Game) {
     this.rank = [2, 3, 4, 5, 6, 7, 8, 9, "T", "J", "Q", "K", "A"].indexOf(this.num) + 2;
     this.str = num + suit;
   }

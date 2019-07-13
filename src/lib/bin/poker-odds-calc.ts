@@ -1,5 +1,8 @@
+#!/usr/bin/env node
+
 import * as argv from "argv";
 import Table from "../Table";
+import Result from "../Result";
 import {CardsFromString, Log} from "../Utils";
 
 argv.option([
@@ -43,7 +46,7 @@ argv.option([
 const {options} = argv.run();
 const log = Log.PrintLn;
 
-let PrintResult = (result) => {
+let PrintResult = (result: Result) => {
   log();
   log(Log.color(`Board`, 'grey') + "   " + table.getBoard().getCards().map(c => Log.color(c.toString(), c.color())).join(" "));
   log();
@@ -77,7 +80,7 @@ let PrintResult = (result) => {
   log(`${result.getIterations()} iterations in ${result.getTime()}ms`, 'grey');
 };
 
-let table;
+let table: Table;
 
 try {
   table = new Table(options.game);
@@ -85,7 +88,7 @@ try {
   if (!Array.isArray(options.player))
     throw new Error("No players found! Use -p or --player. Example -p AcKh.");
 
-  options.player.forEach(p => {
+  options.player.forEach((p: string) => {
     table.addPlayer(CardsFromString(p));
   });
 

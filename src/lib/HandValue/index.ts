@@ -33,7 +33,7 @@ export const type = {
   HIGH_CARDS: "HIGH_CARDS",
 };
 
-export const name = {
+export const name: {[key: string]: string} = {
   ROYAL_FLUSH: "Royal Flush",
   STRAIGHT_FLUSH: "Straight Flush",
   QUADS: "4 of a kind",

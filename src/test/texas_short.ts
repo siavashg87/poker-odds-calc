@@ -1,4 +1,5 @@
 import {SixPlusHoldem as Table} from "../index";
+import Board from "../lib/Board";
 import * as assert from "assert";
 
 describe("Texas Hold'em - short deck", function () {
@@ -7,7 +8,7 @@ describe("Texas Hold'em - short deck", function () {
     const result = new Table()
       .addPlayer(["Qs", "Ks"])
       .addPlayer(["Qd", "Kd"])
-      .boardAction(board => {
+      .boardAction((board: Board) => {
         board
           .setFlop(["Js", "Ts", "6h"])
           .setTurn("Td")
@@ -26,7 +27,7 @@ describe("Texas Hold'em - short deck", function () {
     const result = new Table()
       .addPlayer(["Ts", "Ks"])
       .addPlayer(["8s", "Kd"])
-      .boardAction(board => {
+      .boardAction((board: Board) => {
         board
           .setFlop(["6s", "7s", "8h"])
           .setTurn("9s")
@@ -49,7 +50,7 @@ describe("Texas Hold'em - short deck", function () {
     const result = new Table()
       .addPlayer(["8d", "8c"])
       .addPlayer(["9d", "9c"])
-      .boardAction(board => {
+      .boardAction((board: Board) => {
         board
           .setFlop(["8h", "Ks", "Ad"])
       })
@@ -67,7 +68,7 @@ describe("Texas Hold'em - short deck", function () {
     const result = new Table()
       .addPlayer(["7d", "Td"])
       .addPlayer(["Jc", "Qc"])
-      .boardAction(board => {
+      .boardAction((board: Board) => {
         board
           .setFlop(["Jd", "6d", "Qd"])
         //.setTurn("8d")
@@ -87,7 +88,7 @@ describe("Texas Hold'em - short deck", function () {
     const result = new Table()
       .addPlayer(["9d", "Tc"])
       .addPlayer(["6d", "6c"])
-      .boardAction(board => {
+      .boardAction((board: Board) => {
         board
           .setFlop(["8h", "Js", "Ad"])
         //.setTurn("As")
@@ -107,7 +108,7 @@ describe("Texas Hold'em - short deck", function () {
       .addPlayer(["9d", "Tc"])
       .addPlayer(["6d", "6c"])
       .tripsBeatsStraight()
-      .boardAction(board => {
+      .boardAction((board: Board) => {
         board
           .setFlop(["8h", "Js", "Ad"])
       })
@@ -125,7 +126,7 @@ describe("Texas Hold'em - short deck", function () {
     const result = new Table()
       .addPlayer(["Kd", "Kc"])
       .addPlayer(["6d", "6c"])
-      .boardAction(board => {
+      .boardAction((board: Board) => {
         board
           .setFlop(["6h", "Ks", "Ad"])
       })
@@ -143,7 +144,7 @@ describe("Texas Hold'em - short deck", function () {
     const result = new Table()
       .addPlayer(["Ad", "6c"])
       .addPlayer(["Kd", "Qc"])
-      .boardAction(board => {
+      .boardAction((board: Board) => {
         board
           .setFlop(["Ah", "6s", "Ks"])
           .setTurn("Qh")
@@ -162,7 +163,7 @@ describe("Texas Hold'em - short deck", function () {
     const result = new Table()
       .addPlayer(["Ad", "6c"])
       .addPlayer(["Qd", "Kc"])
-      .boardAction(board => {
+      .boardAction((board: Board) => {
         board
           .setFlop(["6h", "Ks", "8d"])
           .setTurn("Jd")
@@ -181,7 +182,7 @@ describe("Texas Hold'em - short deck", function () {
     const result = new Table()
       .addPlayer(["Ad", "Jc"])
       .addPlayer(["6d", "Kc"])
-      .boardAction(board => {
+      .boardAction((board: Board) => {
         board
           .setFlop(["Th", "7s", "8d"])
           .setTurn("9h")
@@ -201,7 +202,7 @@ describe("Texas Hold'em - short deck", function () {
       .addPlayer(["6s", "6d"])
       .addPlayer(["Ts", "Td"])
       .addPlayer(["Ks", "Kd"])
-      .boardAction(board => {
+      .boardAction((board: Board) => {
         board
           .setFlop(["As", "8s", "Qh"])
       })
@@ -221,7 +222,7 @@ describe("Texas Hold'em - short deck", function () {
     const result = new Table()
       .addPlayer(["6d", "6c"])
       .addPlayer(["7d", "8c"])
-      .boardAction(board => {
+      .boardAction((board: Board) => {
         board
           .setFlop(["6h", "9c", "Td"])
           .setTurn("Qd")
@@ -242,7 +243,7 @@ describe("Texas Hold'em - short deck", function () {
       .addPlayer(["6d", "6c"])
       .addPlayer(["7d", "8c"])
       .tripsBeatsStraight()
-      .boardAction(board => {
+      .boardAction((board: Board) => {
         board
           .setFlop(["6h", "9c", "Td"])
           .setTurn("Qd")
@@ -262,7 +263,7 @@ describe("Texas Hold'em - short deck", function () {
     const result = new Table()
       .addPlayer(["Ah", "Ad"])
       .addPlayer(["Ac", "Kc"])
-      .boardAction(board => {
+      .boardAction((board: Board) => {
         board
           .setFlop(["6c", "Td", "8c"])
       })
