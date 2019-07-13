@@ -1,7 +1,7 @@
 {
   "name": "poker-odds-calc",
-  "version": "0.0.1",
-  "description": "Poker odds calculator for Texas hold'em (with short-deck support) and Omaha",
+  "version": "0.0.10",
+  "description": "Fastest and most accurate node module for calculating odds of poker games Texas Hold'em, Texas Shortdeck/Sixplus and Omaha.",
   "license": "MIT",
   "dependencies": {
     "argv": "0.0.2",
@@ -17,7 +17,7 @@
     "typescript": "^2.9.2"
   },
   "bin": {
-    "poker-odds-calc": "./dist/Lib/bin/poker-odds-calc.js"
+    "poker-odds-calc": "dist/lib/bin/poker-odds-calc.js"
   },
   "engines": {
     "node": ">=6.0.0"
@@ -30,7 +30,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/siavashg87/node-poker-odds-calc.git"
+    "url": "git+https://github.com/siavashg87/poker-odds-calc.git"
   },
   "keywords": [
     "poker",
@@ -38,11 +38,20 @@
     "odds calculator",
     "texas hold'em",
     "texas holdem",
-    "shortdeck texas holdem",
-    "6+ texas hold'm",
+    "shortdeck texas hold'em",
+    "6+ texas hold'em",
+    "six plus texas hold'em",
     "omaha",
     "omaha hi",
     "hand equity",
     "equity"
-  ]
+  ],
+  "bugs": {
+    "url": "https://github.com/siavashg87/poker-odds-calc/issues"
+  },
+  "homepage": "https://github.com/siavashg87/poker-odds-calc#readme",
+  "directories": {
+    "test": "test"
+  },
+  "author": "Siavash Goudarzi <info@siavashg.com>"
 }

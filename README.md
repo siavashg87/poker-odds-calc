@@ -1,10 +1,9 @@
 # Poker Odds Calc
 
-[![Latest npm version](https://img.shields.io/npm/v/poker-odds.svg)](https://www.npmjs.com/package/poker-odds-calc)
 [![Node version required](https://img.shields.io/node/v/poker-odds.svg)](https://www.npmjs.com/package/poker-odds-calc)
 [![Latest Stable Version](https://img.shields.io/npm/v/poker-odds-calc.svg)](https://www.npmjs.com/package/poker-odds-calc)
 
-Poker odds calculator for Texas hold'em (with short-deck support) and Omaha
+Fastest and most accurate node module for calculating odds of poker games Texas Hold'em, Texas Shortdeck/Sixplus and Omaha.
 
 ## Installation
 

@@ -43,7 +43,6 @@ argv.option([
 const {options} = argv.run();
 const log = Log.PrintLn;
 
-
 let PrintResult = (result) => {
   log();
   log(Log.color(`Board`, 'grey') + "   " + table.getBoard().getCards().map(c => Log.color(c.toString(), c.color())).join(" "));
@@ -82,6 +81,9 @@ let table;
 
 try {
   table = new Table(options.game);
+
+  if (!Array.isArray(options.player))
+    throw new Error("No players found! Use -p or --player. Example -p AcKh.");
 
   options.player.forEach(p => {
     table.addPlayer(CardsFromString(p));

@@ -18,9 +18,7 @@
     ],
     "types": [
       "node",
-      "es6-shim",
-      "mocha",
-      "winston"
+      "mocha"
     ]
 
   },
