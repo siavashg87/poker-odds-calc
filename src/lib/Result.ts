@@ -121,6 +121,10 @@ export default class Result {
     return this.result.players.slice(0).sort((a, b) => b.wins - a.wins)[0]
   }
 
+  getWinners() {
+    return this.result.players.slice(0).filter(player => { return player.wins + player.ties > 0 });
+  }
+
   getBoard() {
     return this.result.board.getCards().map(card => card.toString()).join("")
   }
