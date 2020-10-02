@@ -1,7 +1,7 @@
 import Player from "./Player";
 import Board from "./Board";
 import Game from "./Game";
-import {ISuit, Nullable} from "./Interfaces";
+import {ICardNumber, ISuit, Nullable, Suits} from "./Interfaces";
 
 export default class Card {
 
@@ -9,7 +9,7 @@ export default class Card {
   private rank: number;
   readonly str: string;
 
-  constructor(private suit: ISuit, private num: number | string, private game: Game) {
+  constructor(private suit: ISuit, private num: ICardNumber, private game: Game) {
     this.rank = [2, 3, 4, 5, 6, 7, 8, 9, "T", "J", "Q", "K", "A"].indexOf(this.num) + 2;
     this.str = num + suit;
   }
@@ -20,11 +20,11 @@ export default class Card {
 
   color() {
     switch (this.suit) {
-      case "c":
-      case "s":
+      case Suits.SPADES:
+      case Suits.CLUBS:
         return "white";
-      case "d":
-      case "h":
+      case Suits.HEARTS:
+      case Suits.DIAMONDS:
         return "red";
     }
   }

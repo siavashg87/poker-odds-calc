@@ -1,7 +1,7 @@
 import Table from "./Table";
 import Card from "./Card";
 import Player from "./Player";
-import {Games as iGames, AvailableGames, Nullable} from "./Interfaces";
+import {AvailableGames, CardNumbers, Games as iGames, Nullable} from "./Interfaces";
 import * as HandValue from "./HandValue/index";
 
 export default class Game {
@@ -61,7 +61,7 @@ export default class Game {
 
     _cards.forEach((card: Card) => {
       if (card.isAce() && !card.isLowAce()) {
-        const AceOne = new Card(card.getSuit(), "A", this).setAsLowAce();
+        const AceOne = new Card(card.getSuit(), CardNumbers.ACE, this).setAsLowAce();
         cards.push(AceOne);
         suits[AceOne.getSuit()].push(AceOne);
       }
