@@ -2,6 +2,7 @@
 
 import * as argv from "argv";
 import Table from "../Table";
+import Card from "../Card";
 import Result from "../Result";
 import {CardsFromString, Log} from "../Utils";
 
@@ -58,7 +59,7 @@ let PrintResult = (result: Result) => {
   log();
   log(`Player        Hand         Wins      Ties`, 'grey');
   result.getPlayers().forEach(player => {
-    log(`${Log.color(player.getName(), 'cyan')}     ${player.getPlayer().getCards().map(c => Log.color(c.toString(), c.color())).join(" ")}     ${Log.color(player.getWinsPercentageString().padStart(7, " "), player.isWinner() ? "green" : "white")}    ${Log.color(player.getTiesPercentageString().padStart(6, " "), "white")}`);
+    log(`${Log.color(player.getName(), 'cyan')}     ${(player.getPlayer().getCards() as Array<Card>).map(c => Log.color(c.toString(), c.color())).join(" ")}     ${Log.color(player.getWinsPercentageString().padStart(7, " "), player.isWinner() ? "green" : "white")}    ${Log.color(player.getTiesPercentageString().padStart(6, " "), "white")}`);
   });
 
   if (!result.isApproximate()) {

@@ -1,8 +1,9 @@
 import Card from "../Card";
 import {flatUnique} from "../Utils";
 import Game from "../Game";
+import {Nullable} from "../Interfaces";
 
-export default function Straight(game: Game, cards: Array<Card>, suits: { [key: string]: Array<Card> }, num_groups: Array<Array<Card>>, player_cards: Array<Card>): Array<Card> {
+export default function Straight(game: Game, cards: Array<Card>, suits: { [key: string]: Array<Card> }, num_groups: Array<Array<Card>>, player_cards: Array<Card>): Nullable<Array<Card>> {
   let match: Array<Card> = [];
   let match_omaha: Array<Array<Card>> = [];
   for (let i = 0, j = cards.length; i < j; i++) {

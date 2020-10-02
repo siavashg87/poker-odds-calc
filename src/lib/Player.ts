@@ -1,23 +1,24 @@
 import Card from "./Card";
 import Table from "./Table";
+import {IHand, Nullable} from "./Interfaces";
 
 export default class Player {
 
-  private hand: Array<Card> = null;
+  private hand: Nullable<Array<Card>> = null;
 
-  constructor(private seat: number, private Table: Table, hand: Array<string> = null) {
+  constructor(private seat: number, private Table: Table, hand: Nullable<IHand> = null) {
     if (Array.isArray(hand))
       this.setHand(hand);
   }
 
-  setHand(hand: Array<string>) {
+  setHand(hand: IHand) {
     const game = this.Table.getGame();
     if ((game.isTexasHoldem() || game.isSixPlusTexasHoldem()) && hand.length !== 2)
       throw new Error("A Texas hold'em hand must contain exactly 2 cards!");
     if (game.isOmaha() && hand.length !== 4)
       throw new Error("An Omaha hand must contain exactly 4 cards!");
     this.hand = hand.map(c => {
-      return this.Table.getDeck().getCards().find(card => card.toString() === c).setOwner(this);
+      return (this.Table.getDeck().getCards().find(card => card.toString() === c) as Card).setOwner(this);
     });
     return this;
   }

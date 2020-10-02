@@ -2,14 +2,14 @@ import Player from "./Player";
 import Deck from "./Deck";
 import Game from "./Game";
 import Board from "./Board";
-import {Games as iGames} from "./Interfaces";
+import {Games as iGames, IHand, Nullable} from "./Interfaces";
 
 export default class Table {
 
   protected players: Array<Player> = [];
-  protected deck: Deck = null;
-  protected game: Game = null;
-  protected board: Board = null;
+  protected deck: Deck;
+  protected game: Game;
+  protected board: Board;
   private _exhaustive: boolean = false;
   private _limit = 100000;
 
@@ -64,7 +64,7 @@ export default class Table {
     return this;
   }
 
-  setPlayerHand(hand: Array<string>, seat: number) {
+  setPlayerHand(hand: IHand, seat: number) {
 
     if (this.players.length < seat)
       throw new Error("Seat not available!");
@@ -78,13 +78,8 @@ export default class Table {
     return this;
   }
 
-  addPlayer(hand: Array<string>) {
-    let seat;
-    for (let i = 1; i <= this.seats; i++)
-      if (this.players[i - 1].isEmpty()) {
-        seat = i;
-        break;
-      }
+  addPlayer(hand: IHand) {
+    let seat: number = this.players.findIndex(s => s.isEmpty()) + 1;
     return this.setPlayerHand(hand, seat)
   }
 

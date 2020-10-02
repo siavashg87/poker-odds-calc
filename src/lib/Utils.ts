@@ -1,4 +1,5 @@
 import Card from "./Card";
+import {IHand, Nullable} from "./Interfaces";
 
 export module Log {
 
@@ -13,7 +14,7 @@ export module Log {
     grey: '90'
   };
 
-  export function PrintLn(l: string = "", c: string = null) {
+  export function PrintLn(l: string = "", c: Nullable<string> = null) {
     if (!l)
       return console.log('');
     if (c)
@@ -21,7 +22,7 @@ export module Log {
     console.log(` ${l}`)
   }
 
-  export function color(l: string, c: string = null) {
+  export function color(l: string, c: Nullable<string> = null) {
     return !c || !CONSOLE_COLORS[c] ? l : `\x1b[${CONSOLE_COLORS[c]}m${l}\x1b[0m`;
   }
 
@@ -31,8 +32,8 @@ export function toPercent(num: number): number {
   return (Math.round(num * 10000) / 100)
 }
 
-export function CardsFromString(str: string): Array<string> {
-  return str.split(/(?=[AKQJT2-9.][schd.])/)
+export function CardsFromString(str: string): IHand {
+  return str.split(/(?=[AKQJT2-9.][schd.])/) as IHand;
 }
 
 Object.defineProperty(Array.prototype, 'sortCards', {

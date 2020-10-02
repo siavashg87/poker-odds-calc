@@ -1,7 +1,8 @@
 import Card from "../Card";
 import Game from "../Game";
+import {Nullable} from "../Interfaces";
 
-export default function hasTwoPairs(game: Game, cards: Array<Card>, suits: { [key: string]: Array<Card> }, num_groups: Array<Array<Card>>, player_cards: Array<Card>, board: Array<Card>): Array<Card> {
+export default function hasTwoPairs(game: Game, cards: Array<Card>, suits: { [key: string]: Array<Card> }, num_groups: Array<Array<Card>>, player_cards: Array<Card>, board: Array<Card>): Nullable<Array<Card>> {
 
   let pairs = num_groups.filter(g => g.length === 2);
 
@@ -14,7 +15,7 @@ export default function hasTwoPairs(game: Game, cards: Array<Card>, suits: { [ke
     }
 
     if (game.isOmaha()) {
-      const top_pair = pairs.shift();
+      const top_pair = pairs.shift() as Array<Card>;
       for (const pair of pairs) {
         const this_combo = [
           ...top_pair,
@@ -26,14 +27,14 @@ export default function hasTwoPairs(game: Game, cards: Array<Card>, suits: { [ke
           board.sortCards();
           return [
             ...this_combo,
-            board.find(c => !this_combo.find(ngc => c.toString() === ngc.toString()))
+            board.find(c => !this_combo.find(ngc => c.toString() === ngc.toString())) as Card
           ];
         }
         else if (ln === 1) {
           player_cards.sortCards();
           return [
             ...this_combo,
-            player_cards.find(c => !this_combo.find(ngc => c.toString() === ngc.toString()))
+            player_cards.find(c => !this_combo.find(ngc => c.toString() === ngc.toString())) as Card
           ];
         }
       }

@@ -1,14 +1,15 @@
 import Player from "./Player";
 import Board from "./Board";
 import Game from "./Game";
+import {ISuit, Nullable} from "./Interfaces";
 
 export default class Card {
 
-  private owner: Player | Board = null;
-  private rank: number = null;
-  readonly str: string = null;
+  private owner: Nullable<Player | Board> = null;
+  private rank: number;
+  readonly str: string;
 
-  constructor(private suit: "c" | "s" | "h" | "d", private num: number | string, private game: Game) {
+  constructor(private suit: ISuit, private num: number | string, private game: Game) {
     this.rank = [2, 3, 4, 5, 6, 7, 8, 9, "T", "J", "Q", "K", "A"].indexOf(this.num) + 2;
     this.str = num + suit;
   }

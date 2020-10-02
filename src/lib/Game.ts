@@ -1,7 +1,7 @@
 import Table from "./Table";
 import Card from "./Card";
 import Player from "./Player";
-import {Games as iGames, AvailableGames} from "./Interfaces";
+import {Games as iGames, AvailableGames, Nullable} from "./Interfaces";
 import * as HandValue from "./HandValue/index";
 
 export default class Game {
@@ -41,7 +41,7 @@ export default class Game {
   }
 
   getResult(players: Array<Player>, board: Array<Card>) {
-    return players.map((player: Player) => this.getHandStrentgh(board, player.getCards()));
+    return players.filter(player => player.inHand()).map(player => this.getHandStrentgh(board, player.getCards() as Array<Card>));
   }
 
   private getHandStrentgh(board: Array<Card>, player_cards: Array<Card>) {
@@ -77,7 +77,7 @@ export default class Game {
     let rank = "";
     let rank_str = "HIGH_CARD";
 
-    let hand;
+    let hand: Nullable<Array<Card>>;
 
     if ((hand = HandValue.StraightFlush(this, cards, suits, num_groups, player_cards)) !== null) {
       if (hand[0].getNum() === "T") {
@@ -158,7 +158,7 @@ export default class Game {
     }
 
     let points = rank;
-    hand.forEach(card => {
+    (hand as Array<Card>).forEach(card => {
       points += card.getRank(true);
     });
 

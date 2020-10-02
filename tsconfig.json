@@ -10,6 +10,8 @@
     "noImplicitReturns": true,
     "moduleResolution": "node",
     "declarationDir": "./dts/",
+    "strict": true,
+    "strictNullChecks": true,
     "declaration": true,
     "watch": false,
     "lib": [
