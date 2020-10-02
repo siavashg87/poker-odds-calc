@@ -1,6 +1,6 @@
 {
   "name": "poker-odds-calc",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "Fastest and most accurate node module for calculating odds of poker games Texas Hold'em, Texas Shortdeck/Sixplus and Omaha.",
   "license": "MIT",
   "dependencies": {
