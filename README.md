@@ -15,7 +15,7 @@ npm install -g poker-odds-calc
 ### Usage
 
 ```bash
-poker-odds-calc -p AdKh -p AcKh -b 5sTd9c
+poker-odds-calc -p AdKh -p AcKs -b 5sTd9c
 
 # options
 -g, --game texas_holdem     # Select between texas_holdem, shortdeck_holdem and omaha. Default texas_holdem.
