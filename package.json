@@ -32,7 +32,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/siavashg87/poker-odds-calc.git"
+    "url": "git+https://github.com/McArrow/poker-odds-calc.git"
   },
   "keywords": [
     "poker",
@@ -51,9 +51,9 @@
     "equity"
   ],
   "bugs": {
-    "url": "https://github.com/siavashg87/poker-odds-calc/issues"
+    "url": "https://github.com/McArrow/poker-odds-calc/issues"
   },
-  "homepage": "https://github.com/siavashg87/poker-odds-calc#readme",
+  "homepage": "https://github.com/McArrow/poker-odds-calc#readme",
   "directories": {
     "test": "test"
   },
