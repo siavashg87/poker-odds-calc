@@ -14,7 +14,7 @@ export default function hasTwoPairs(game: Game, cards: Array<Card>, suits: { [ke
       });
     }
 
-    if (game.isOmaha()) {
+    if (game.isOmaha() || game.isOmaha5Cards() || game.isOmaha6Cards()) {
       const top_pair = pairs.shift() as Array<Card>;
       for (const pair of pairs) {
         const this_combo = [

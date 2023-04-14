@@ -4,7 +4,7 @@
 [![Node version required](https://img.shields.io/node/v/poker-odds.svg)](https://www.npmjs.com/package/poker-odds-calc)
 [![Latest Stable Version](https://img.shields.io/npm/v/poker-odds-calc.svg)](https://www.npmjs.com/package/poker-odds-calc)
 
-Fastest and most accurate node module for calculating odds of poker games Texas Hold'em, Texas Shortdeck/Sixplus and Omaha.
+Fastest and most accurate node module for calculating odds of poker games Texas Hold'em, Texas Shortdeck/Sixplus, Omaha, 5-Card Omaha and 6-Card Omaha.
 
 ## Installation
 
@@ -37,7 +37,7 @@ poker-odds-calc -p QsKs -p QdKd -b JsTs5hTd
 Let's take the previous example, but use the API instead:
 
 ```js
-import {TexasHoldem, SixPlusHoldem, Omaha} from './index';
+import {TexasHoldem, SixPlusHoldem, Omaha, OmahaFiveCards, OmahaSixCards} from './index';
 
 const Table = new TexasHoldem();
 Table

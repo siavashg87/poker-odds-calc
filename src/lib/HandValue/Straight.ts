@@ -29,7 +29,7 @@ export default function Straight(game: Game, cards: Array<Card>, suits: { [key: 
       }
 
       if (ln >= 5) {
-        if (game.isOmaha()) {
+        if (game.isOmaha() || game.isOmaha5Cards() || game.isOmaha6Cards()) {
           const omaha_matches = flatUnique(match_omaha.slice(ln - 5, ln));
           for (let omaha_match of omaha_matches) {
             if (player_cards.filter(pc => !!omaha_match.find(m => m.toString() === pc.toString())).length === 2)

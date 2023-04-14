@@ -7,7 +7,7 @@ export default function OnePair(game: Game, cards: Array<Card>, suits: { [key: s
   let pair = num_groups.find(g => g.length === 2) as Array<Card>;
 
   if (pair) {
-    if (game.isOmaha()) {
+    if (game.isOmaha() || game.isOmaha5Cards() || game.isOmaha6Cards()) {
 
       const matches = player_cards.filter(pc => !!pair.find(m => m.toString() === pc.toString()));
       const ln = matches.length;

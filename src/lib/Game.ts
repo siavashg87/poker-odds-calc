@@ -25,6 +25,14 @@ export default class Game {
     return this.game == "omaha";
   }
 
+  isOmaha5Cards() {
+    return this.game == "omaha_5cards";
+  }
+
+  isOmaha6Cards() {
+    return this.game == "omaha_6cards";
+  }
+
   getGame() {
     return this.game;
   }

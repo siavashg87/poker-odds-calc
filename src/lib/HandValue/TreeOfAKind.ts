@@ -6,7 +6,7 @@ export default function TreeOfAKind(game: Game, cards: Array<Card>, suits: { [ke
   for (let i in num_groups) {
     let num_group = num_groups[i];
     if (num_group.length >= 3) {
-      if (game.isOmaha()) {
+      if (game.isOmaha() || game.isOmaha5Cards() || game.isOmaha6Cards()) {
         const player_cards_used = player_cards.filter(pc => !!num_group.find(m => m.toString() === pc.toString()));
         const ln = player_cards_used.length;
         player_cards.sortCards();
