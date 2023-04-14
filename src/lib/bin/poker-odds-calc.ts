@@ -11,7 +11,7 @@ argv.option([
     name: "game",
     short: "g",
     type: "string",
-    description: "Select between texas_holdem, shortdeck_holdem and omaha. Default texas_holdem."
+    description: "Select between texas_holdem, sixplus_holdem and omaha. Default texas_holdem."
   },
   {
     name: "board",
@@ -46,7 +46,7 @@ argv.option([
   {
     name: "tripsbeatstraight",
     type: "boolean",
-    description: "Option only available for -g shortdeck_holdem"
+    description: "Option only available for -g sixplus_holdem"
   }
 ]);
 

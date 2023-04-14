@@ -18,13 +18,13 @@ npm install -g poker-odds-calc
 poker-odds-calc -p AdKh -p AcKh -b 5sTd9c
 
 # options
--g, --game texas_holdem     # Select between texas_holdem, shortdeck_holdem and omaha. Default texas_holdem.
+-g, --game texas_holdem     # Select between texas_holdem, sixplus_holdem and omaha. Default texas_holdem.
 -b, --board 5sTd9cTh        # Define community cards.
 -p, --player AcKh           # Define any number of player hand.
 -l, --limit 1000            # Limit number of iterations. Default 100,000.
 -e, --exhaustive            # Run all possible board combinations, regardless limit option.
 -d, --dead 2s2d             # Dead card(s) to exclude from calculation.
---tripsbeatstraight         # Option only available for -g shortdeck_holdem
+--tripsbeatstraight         # Option only available for -g sixplus_holdem
 -h, --help                  # Show help
 ```
 
