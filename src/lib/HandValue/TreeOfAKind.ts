@@ -12,21 +12,25 @@ export default function TreeOfAKind(game: Game, cards: Array<Card>, suits: { [ke
         player_cards.sortCards();
         board.sortCards();
         let op = null;
-        if (ln > 2) {
-          num_group = num_group.slice(0, 3);
-          op = board.filter(c => !num_group.find(ngc => c.toString() === ngc.toString())).slice(0, 2)
-        }
-        else if (ln === 2) {
-          op = board.filter(c => !num_group.find(ngc => c.toString() === ngc.toString())).slice(0, 2)
-        }
-        else if (ln === 1) {
-          op = [
-            player_cards.find(c => !num_group.find(ngc => c.toString() === ngc.toString())),
-            board.find(c => !num_group.find(ngc => c.toString() === ngc.toString()))
-          ].sortCards();
-        }
-        else if (ln === 0) {
-          op = player_cards.slice(0, 2)
+        switch (ln) {
+          case 0:
+            op = player_cards.slice(0, 2);
+            break;
+          case 1:
+            op = [
+              player_cards.find(c => !num_group.find(ngc => c.toString() === ngc.toString())),
+              board.find(c => !num_group.find(ngc => c.toString() === ngc.toString()))
+            ].sortCards();
+            break;
+          case 2:
+            op = board.filter(c => !num_group.find(ngc => c.toString() === ngc.toString())).slice(0, 2);
+            break;
+          case 3:
+            if (num_group.length > 3) {
+              num_group = num_group.slice(0, 3);
+              op = board.filter(c => !num_group.find(ngc => c.toString() === ngc.toString())).slice(0, 2);
+            }
+            break;
         }
 
         if (op) {
