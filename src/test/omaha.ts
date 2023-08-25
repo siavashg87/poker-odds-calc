@@ -368,4 +368,30 @@ describe("Texas Omaha", function () {
 
   }).timeout(2e4);
 
+  it('Bug af77e24112120d83bc5b57d327068f9fe53fffa7 1', (done) => {
+    const result = new Table()
+        .addPlayer(['Ac', 'Ad', 'As', 'Ah'])
+        .addPlayer(['2c', '2d', '2s', '2h'])
+        .calculate();
+    assert.equal(result.getPlayers()[0].getWinsPercentage(), 100.00);
+    assert.equal(result.getPlayers()[1].getWinsPercentage(), 0);
+    assert.equal(result.getPlayers()[0].getTiesPercentage(), 0);
+    assert.equal(result.getPlayers()[1].getTiesPercentage(), 0);
+
+    done();
+  }).timeout(3e3);
+
+  it('Bug af77e24112120d83bc5b57d327068f9fe53fffa7 2', (done) => {
+    const result = new Table()
+        .addPlayer(['As', 'Ah', 'Kh', 'Ks'])
+        .addPlayer(['2c', '2d', '2s', '2h'])
+        .calculate();
+    assert.equal(result.getPlayers()[0].getWinsPercentage(), 100.00);
+    assert.equal(result.getPlayers()[1].getWinsPercentage(), 0);
+    assert.equal(result.getPlayers()[0].getTiesPercentage(), 0);
+    assert.equal(result.getPlayers()[1].getTiesPercentage(), 0);
+
+    done();
+  }).timeout(3e3);
+
 });
