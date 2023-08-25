@@ -117,7 +117,9 @@ try {
   PrintResult(table.calculate());
 
 } catch (e) {
-  log(e.toString(), 'red')
+  if (e instanceof Error) {
+    log(e.toString(), 'red')
+  }
 }
 
 
