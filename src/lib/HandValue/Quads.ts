@@ -8,7 +8,7 @@ export default function Quads(game: Game, cards: Array<Card>, suits: { [key: str
 
     for (const match of matches) {
 
-      if (game.isOmaha()) {
+      if (game.isOmaha() || game.isOmaha5Cards() || game.isOmaha6Cards()) {
         const player_card_matches = player_cards.filter(pc => !!match.find(m => m.toString() === pc.toString())).length;
         if (player_card_matches === 2) {
           const highest_board_kicker = board

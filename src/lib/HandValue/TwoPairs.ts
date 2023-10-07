@@ -14,28 +14,31 @@ export default function hasTwoPairs(game: Game, cards: Array<Card>, suits: { [ke
       });
     }
 
-    if (game.isOmaha()) {
-      const top_pair = pairs.shift() as Array<Card>;
-      for (const pair of pairs) {
-        const this_combo = [
-          ...top_pair,
-          ...pair
-        ];
-        const matches = player_cards.filter(pc => !!this_combo.find(m => m.toString() === pc.toString()));
-        const ln = matches.length;
-        if (ln === 2) {
-          board.sortCards();
-          return [
-            ...this_combo,
-            board.find(c => !this_combo.find(ngc => c.toString() === ngc.toString())) as Card
-          ];
-        }
-        else if (ln === 1) {
-          player_cards.sortCards();
-          return [
-            ...this_combo,
-            player_cards.find(c => !this_combo.find(ngc => c.toString() === ngc.toString())) as Card
-          ];
+    if (game.isOmaha() || game.isOmaha5Cards() || game.isOmaha6Cards()) {
+      for (const top_pair of pairs) {
+        for (const pair of pairs) {
+          if (pair !== top_pair) {
+            const this_combo = [
+              ...top_pair,
+              ...pair
+            ];
+            const matches = player_cards.filter(pc => !!this_combo.find(m => m.toString() === pc.toString()));
+            const ln = matches.length;
+            if (ln === 2) {
+              board.sortCards();
+              return [
+                ...this_combo,
+                board.find(c => !this_combo.find(ngc => c.toString() === ngc.toString())) as Card
+              ];
+            }
+            else if (ln === 1) {
+              player_cards.sortCards();
+              return [
+                ...this_combo,
+                player_cards.find(c => !this_combo.find(ngc => c.toString() === ngc.toString())) as Card
+              ];
+            }
+          }
         }
       }
     }

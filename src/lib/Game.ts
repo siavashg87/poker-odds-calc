@@ -25,6 +25,14 @@ export default class Game {
     return this.game == "omaha";
   }
 
+  isOmaha5Cards() {
+    return this.game == "omaha_5cards";
+  }
+
+  isOmaha6Cards() {
+    return this.game == "omaha_6cards";
+  }
+
   getGame() {
     return this.game;
   }
@@ -107,9 +115,9 @@ export default class Game {
       rank = "5";
       rank_str = "STRAIGHT";
     }
-    else if (!this.isSixPlusTexasHoldem() && (hand = HandValue.TreeOfAKind(this, cards, suits, num_groups, player_cards, board)) !== null) {
+    else if (!this.isSixPlusTexasHoldem() && (hand = HandValue.ThreeOfAKind(this, cards, suits, num_groups, player_cards, board)) !== null) {
       rank = "4";
-      rank_str = "TREE_OF_A_KIND";
+      rank_str = "THREE_OF_A_KIND";
     }
 
 
@@ -123,9 +131,9 @@ export default class Game {
     }
 
 
-    else if (this.isSixPlusTexasHoldem() && this.doesTripsBeatStraight() && (hand = HandValue.TreeOfAKind(this, cards, suits, num_groups, player_cards, board)) !== null) {
+    else if (this.isSixPlusTexasHoldem() && this.doesTripsBeatStraight() && (hand = HandValue.ThreeOfAKind(this, cards, suits, num_groups, player_cards, board)) !== null) {
       rank = "5";
-      rank_str = "TREE_OF_A_KIND";
+      rank_str = "THREE_OF_A_KIND";
     }
     else if (this.isSixPlusTexasHoldem() && this.doesTripsBeatStraight() && (hand = HandValue.Straight(this, cards, suits, num_groups, player_cards)) !== null) {
       rank = "4";
@@ -137,9 +145,9 @@ export default class Game {
       rank = "5";
       rank_str = "STRAIGHT";
     }
-    else if (this.isSixPlusTexasHoldem() && !this.doesTripsBeatStraight() && (hand = HandValue.TreeOfAKind(this, cards, suits, num_groups, player_cards, board)) !== null) {
+    else if (this.isSixPlusTexasHoldem() && !this.doesTripsBeatStraight() && (hand = HandValue.ThreeOfAKind(this, cards, suits, num_groups, player_cards, board)) !== null) {
       rank = "4";
-      rank_str = "TREE_OF_A_KIND";
+      rank_str = "THREE_OF_A_KIND";
     }
 
 

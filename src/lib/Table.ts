@@ -13,7 +13,7 @@ export default class Table {
   private _exhaustive: boolean = false;
   private _limit = 100000;
 
-  constructor(game: iGames = "texas_holdem", protected seats: number = 9) {
+  constructor(game: iGames = "texas_holdem", protected seats: number = 10) {
     this.players = (new Array(seats) as any).fill(null).map((p: any, i: number) => new Player(i + 1, this));
     this.game = new Game(game, this);
     this.deck = new Deck(this.game);

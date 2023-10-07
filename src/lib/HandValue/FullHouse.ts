@@ -15,7 +15,7 @@ export default function Fullhouse(game: Game, cards: Array<Card>, suits: { [key:
   if ((three_of_a_kinds.length * 10) + pairs.length < 11)
     return null;
 
-  if (game.isOmaha()) {
+  if (game.isOmaha() || game.isOmaha5Cards() || game.isOmaha6Cards()) {
     three_of_a_kinds.sortPairs();
     pairs.sortPairs();
     const all_combinations = [...three_of_a_kinds, ...pairs].sort((b, a) => b[0].getRank() - a[0].getRank());

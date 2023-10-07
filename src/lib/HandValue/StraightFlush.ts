@@ -20,7 +20,7 @@ export default function StraightFlush(game: Game, cards: Array<Card>, suits: { [
           matches.push(this_card);
           const ln = matches.length;
           if (ln >= 5) {
-            if (game.isOmaha()) {
+            if (game.isOmaha() || game.isOmaha5Cards() || game.isOmaha6Cards()) {
               const omaha_matches = matches.slice(ln - 5, ln);
               if (player_cards.filter(pc => !!omaha_matches.find(m => m.toString() === pc.toString())).length === 2)
                 return omaha_matches.sort((a,b) => a.getRank() - b.getRank());

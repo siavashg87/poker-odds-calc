@@ -3,7 +3,7 @@ import Quads from "./Quads";
 import FullHouse from "./FullHouse";
 import Flush from "./Flush";
 import Straight from "./Straight";
-import TreeOfAKind from "./TreeOfAKind";
+import ThreeOfAKind from "./ThreeOfAKind";
 import TwoPairs from "./TwoPairs";
 import OnePair from "./OnePair";
 import HighCards from "./HighCards";
@@ -14,7 +14,7 @@ export {
   FullHouse,
   Flush,
   Straight,
-  TreeOfAKind,
+  ThreeOfAKind,
   TwoPairs,
   OnePair,
   HighCards
@@ -27,7 +27,7 @@ export const type = {
   FULL_HOUSE: "FULL_HOUSE",
   FLUSH: "FLUSH",
   STRAIGHT: "STRAIGHT",
-  TREE_OF_A_KIND: "TREE_OF_A_KIND",
+  THREE_OF_A_KIND: "THREE_OF_A_KIND",
   TWO_PAIRS: "TWO_PAIRS",
   ONE_PAIR: "ONE_PAIR",
   HIGH_CARDS: "HIGH_CARDS",
@@ -40,7 +40,7 @@ export const name: {[key: string]: string} = {
   FULL_HOUSE: "Full House",
   FLUSH: "Flush",
   STRAIGHT: "Straight",
-  TREE_OF_A_KIND: "3 of a kind",
+  THREE_OF_A_KIND: "3 of a kind",
   TWO_PAIRS: "Two Pairs",
   ONE_PAIR: "One Pair",
   HIGH_CARDS: "High Card",

@@ -259,7 +259,7 @@ describe("Texas Hold'em", function () {
 
   });
 
-  it('TREE WAYS', (done) => {
+  it('THREE WAYS', (done) => {
     const result = new Table()
       .addPlayer(["2s", "2d"])
       .addPlayer(["Ts", "Td"])

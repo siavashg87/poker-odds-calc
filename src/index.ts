@@ -18,3 +18,15 @@ export class Omaha extends Table {
     super("omaha");
   }
 }
+
+export class OmahaFiveCards extends Table {
+  constructor() {
+    super("omaha_5cards");
+  }
+}
+
+export class OmahaSixCards extends Table {
+  constructor() {
+    super("omaha_6cards");
+  }
+}

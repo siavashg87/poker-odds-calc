@@ -9,7 +9,7 @@ export default function hasFlush(game: Game, cards: Array<Card>, suits: { [key: 
       suits[suit].length >= 5
       && (ln = (match = suits[suit].filter(c => !c.isLowAce())).length) >= 5
     ) {
-      if (game.isOmaha()) {
+      if (game.isOmaha() || game.isOmaha5Cards() || game.isOmaha6Cards()) {
         const player_cards_in_play = player_cards.filter(pc => !!suits[suit].find(m => m.toString() === pc.toString()));
         if (player_cards_in_play.length < 2)
           continue;

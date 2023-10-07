@@ -197,7 +197,7 @@ describe("Texas Hold'em - short deck", function () {
 
   });
 
-  it('TREE WAYS', (done) => {
+  it('THREE WAYS', (done) => {
     const result = new Table()
       .addPlayer(["6s", "6d"])
       .addPlayer(["Ts", "Td"])
